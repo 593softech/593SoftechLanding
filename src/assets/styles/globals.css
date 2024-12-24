@@ -1,0 +1,96 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes moveHand {
+  0% {
+    transform: translateX(0); /* Comienza en su posición inicial */
+  }
+  50% {
+    transform: translate(200px, 100px); /* Se mueve hacia la derecha */
+  }
+  100% {
+    transform: translateX(0); /* Regresa a su posición inicial */
+  }
+}
+
+.animate-moveHand {
+  animation: moveHand 10s infinite ease-in-out; /* Configura la animación */
+}
+
+.markdown ul,
+.markdown ol {
+  margin-left: 1.5em; /* Espaciado para listas */
+  padding-left: 0; /* Elimina el padding predeterminado */
+}
+
+.markdown li {
+  margin-bottom: 0.5em; /* Espacio entre elementos de la lista */
+}
+
+.markdown ol {
+  list-style-type: decimal; /* Asegúrate de que se muestre como lista ordenada */
+}
+
+.markdown ul {
+  list-style-type: disc; /* Asegúrate de que se muestre como lista desordenada */
+}
+
+.markdown a {
+  color: #3b82f6; /* Cambia este color según tus necesidades */
+  text-decoration: underline; /* O 'none' si no deseas subrayar */
+}
+
+.markdown a:hover {
+  color: #2563eb; /* Color al pasar el ratón */
+}
+
+.custom-quill {
+  border-radius: 10px !important; /* Bordes redondeados */
+  border: none !important; /* Elimina cualquier borde visible */
+}
+
+.ql-toolbar {
+  background-color: #e7e7e74f;
+  border-radius: 10px !important; /* Bordes redondeados para el toolbar */
+  border: none !important; /* Elimina el borde del toolbar */
+  box-shadow: none !important; /* Elimina cualquier sombra del toolbar */
+}
+
+.ql-container {
+  border-radius: 10px !important; /* Bordes redondeados para la caja de texto */
+  border: none !important; /* Elimina el borde de la caja de texto */
+  box-shadow: none !important; /* Elimina cualquier sombra de la caja de texto */
+}
+
+/* Asegurarte que no haya borde visible */
+.ql-container.ql-snow {
+  border: 1px solid transparent !important; /* Borde transparente */
+}
+
+.texto-gradiente {
+  background: linear-gradient(45deg, #f33c3c, #4c91f7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 1px 1px 5px rgba(179, 179, 179, 0.226);
+}
+
+/* Prevenir el zoom en inputs */
+input,
+textarea,
+select {
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+
+input,
+textarea,
+select {
+  -webkit-text-size-adjust: 100%; /* Para Safari */
+  -ms-text-size-adjust: 100%; /* Para IE y Edge */
+}
+
+.no-zoom {
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
