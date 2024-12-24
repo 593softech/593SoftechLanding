@@ -12,7 +12,7 @@ export async function generateMetadata({
   params: { id: string; title: string };
 }): Promise<Metadata> {
   try {
-    const { id, title } = params; // No usar await aquí
+    const { id } = params; // No usar await aquí
 
     const article = await getArticleById(Number(id));
     if (!article) {
