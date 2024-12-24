@@ -12,8 +12,7 @@ export async function generateMetadata({
   params: { id: string; title: string };
 }): Promise<Metadata> {
   try {
-    // Esperar a los parámetros antes de usarlos
-    const { id, title } = await params; // Aquí está la corrección
+    const { id, title } = params; // No usar await aquí
 
     const article = await getArticleById(Number(id));
     if (!article) {
@@ -57,8 +56,7 @@ const ArticlePageContainer = async ({
   params: { id: string; title: string };
 }) => {
   try {
-    // Esperar a los parámetros antes de usarlos
-    const { id, title } = await params; // Aquí está la corrección
+    const { id, title } = params; // No usar await aquí
 
     const decodedTitle = decodeURIComponent(title);
     const articleId = Number(id);
