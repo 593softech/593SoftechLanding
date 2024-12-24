@@ -12,7 +12,7 @@ export async function generateMetadata({
   params: { id: string; title: string };
 }): Promise<Metadata> {
   try {
-    const { id } = params; // No usar await aquí
+    const { id, title } = params;
 
     const article = await getArticleById(Number(id));
     if (!article) {
@@ -56,7 +56,7 @@ const ArticlePageContainer = async ({
   params: { id: string; title: string };
 }) => {
   try {
-    const { id, title } = params; // No usar await aquí
+    const { id, title } = params;
 
     const decodedTitle = decodeURIComponent(title);
     const articleId = Number(id);
@@ -82,7 +82,6 @@ const ArticlePageContainer = async ({
       return null;
     }
 
-    // Pasar los datos del artículo al componente ArticlePage
     return <ArticleClient article={article} />;
   } catch {
     notFound();
